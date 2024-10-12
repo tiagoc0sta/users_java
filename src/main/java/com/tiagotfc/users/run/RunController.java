@@ -43,8 +43,12 @@ public class RunController {
         runRepository.create(run);
     }
 
-    //put
     // PUT (create and update),
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @PutMapping("/{id}")
+    void update(@RequestBody Run run, @PathVariable Integer id) {
+        runRepository.update(run,id);
+    }
 
     //delete
 
